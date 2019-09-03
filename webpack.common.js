@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin'); // 会在打包结束�
 const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // installed via npm
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin'); // css整合
 
 const entryDirectoryPath = path.resolve(__dirname, './src');
 const outputDirectoryPath = path.resolve(__dirname, 'dist');
@@ -45,7 +45,7 @@ module.exports = {
                 limit: 8192,
                 name (file) {
                     if (devMode) return '[path][name].[ext]';
-                    return '[hash].[ext]';
+                    return '[hash:6].[ext]';
                 },
                 outputPath: 'css/images/'
                 }
@@ -65,6 +65,7 @@ module.exports = {
     plugins: [
         new VueLoaderPlugin(),
         new CleanWebpackPlugin(),
+        new OptimizeCSSAssetsPlugin({}),
         new HtmlWebpackPlugin({
             template: './template.html',
         }),

@@ -13,6 +13,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+   @import '../assets/css/home';
    .box{color: red;border: 3px solid brown;
         img{
             width: 60px;height: 60px;display: block;
