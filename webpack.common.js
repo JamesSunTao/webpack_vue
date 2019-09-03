@@ -36,16 +36,32 @@ module.exports = {
                   'sass-loader',
                 ],
             },
+              // 图片资源规则
+            {
+                test: /\.(png|jpg|jpeg|gif|cur|ico)$/i,
+                loader: 'url-loader',
+                options: {
+                // 设置大小限制，超出后使用fiel-uploader
+                limit: 8192,
+                name (file) {
+                    if (devMode) return '[path][name].[ext]';
+                    return '[hash].[ext]';
+                },
+                outputPath: 'css/images/'
+                }
+            },
             {
                 test: /\.(vue)$/,
                 use:{
                     loader:'vue-loader',
-
                 }
             }  
            ]
     },
-  
+    resolve: {
+        // 后缀自动补全
+        extensions: ['.js', '.vue'],       
+    },
     plugins: [
         new VueLoaderPlugin(),
         new CleanWebpackPlugin(),
@@ -53,8 +69,8 @@ module.exports = {
             template: './template.html',
         }),
         new MiniCssExtractPlugin({
-            filename: devMode ? '[name].css' : '[name].[hash].css',
-            chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+            filename: devMode ? 'css/[name].css' : 'css/[name][hash:6].css',
+            chunkFilename: devMode ? 'css/[id].css' : 'css/[id][hash:6].css',
         }),
     ],
    
