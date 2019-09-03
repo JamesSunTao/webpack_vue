@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "bdev": "webpack --config ./webpack.dev.js",
     "dev": "webpack-dev-server --config ./webpack.dev.js",
     "build": "webpack -p --config ./webpack.prod.js"
   },
@@ -23,6 +24,7 @@
     "express": "^4.17.1",
     "file-loader": "^4.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^5.0.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
@@ -44,6 +46,8 @@
     "@babel/runtime": "^7.5.5",
     "@babel/runtime-corejs2": "^7.5.5",
     "extract-text-webpack-plugin": "^3.0.2",
+    "jquery": "^3.4.1",
+    "lodash": "^4.17.15",
     "vue": "^2.6.10",
     "vue-style-loader": "^4.1.2",
     "vuex": "^3.1.1"

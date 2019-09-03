@@ -2,6 +2,7 @@
     <div class="box">
         {{name}}:{{age}}
         <img src="../assets/images/6.jpeg" alt="">
+        <img src="../assets/images/4.jpg" alt="">
     </div>
 </template>
 <script>
@@ -14,7 +15,7 @@ export default {
 </script>
 <style lang="scss" scoped>
    @import '../assets/css/home';
-   .box{color: red;border: 3px solid brown;
+   .box{color:#fff;border: 3px solid brown;
         img{
             width: 60px;height: 60px;display: block;
         }

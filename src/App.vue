@@ -7,7 +7,10 @@
 <script>
 import Home from './components/home';
 export default {
-    components:{Home},
+    components:{
+        Home
+      
+        },
 }
 </script>
 <style lang='scss' scoped>
