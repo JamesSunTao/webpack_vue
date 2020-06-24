@@ -1,6 +1,6 @@
 <template>
     <div class="box">
-        app
+        app,st,st
     </div>
 </template>
 <script>
